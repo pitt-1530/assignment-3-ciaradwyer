@@ -12,10 +12,10 @@ public class PlaylistRecommender {
             throw new IllegalArgumentException("bmps must have at least 1 non-null item");
         }
 
-        int sum;
+        int sum = 0;
 
         for (Integer bpm : bpms) {
-            sum +- bpm;
+            sum += bpm;
         }
 
         double avg = sum / (double) bpms.size();
