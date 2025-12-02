@@ -35,15 +35,20 @@ public class PlaylistRecommender {
         // TODO: Implement isValidTrackTitle()
         //throw new UnsupportedOperationException("Not implemented");
 
-        if (title.isEmpty()) {
+         if (title == null) {
             return false;
         }
 
-        if (title.matches("{A-Z},{a-z},{ },{1-30}")) {
-            return true;
+        String trimmed = title.trim();
+        if (trimmed.isEmpty() || trimmed.length() > 30) {
+            return false;
         }
 
-        return false;
+        if (!trimmed.matches("^[A-Za-z ]{1,30}$")) {
+            return false;
+        }
+        
+        return trimmed.matches(".*[A-Za-z].*");
     }
 
     public static int normalizeVolume(int volumeDb) {
