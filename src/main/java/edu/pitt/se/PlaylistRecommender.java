@@ -43,7 +43,7 @@ public class PlaylistRecommender {
             return false;
         }
 
-        if (!title.matches("^[A-Za-z ]")) {
+        if (!title.matches("^[A-Za-z ]{1,30}$")) {
             return false;
         }
         
