@@ -39,16 +39,15 @@ public class PlaylistRecommender {
             return false;
         }
 
-        String trimmed = title.trim();
-        if (trimmed.isEmpty() || trimmed.length() > 30) {
+        if (title.isEmpty() || title.length() > 30) {
             return false;
         }
 
-        if (!trimmed.matches("^[A-Za-z ]{1,30}$")) {
+        if (!title.matches("^[A-Za-z ]")) {
             return false;
         }
         
-        return trimmed.matches(".*[A-Za-z].*");
+        return title.matches(".*[A-Za-z].*");
     }
 
     public static int normalizeVolume(int volumeDb) {
